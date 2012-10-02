@@ -40,7 +40,8 @@ function showMonitor(&$q) { $s=""; $ms=array(); $i=-1;
 			}
 			foreach (explode("\r\n",$line) as $str) {
 				$v=explode(":",$str);
-				$var=$v[0]; $val=$q->validate->ast($v[1]);
+				if (isset($v[0])) { $var=$v[0]; } else { $var=""; }
+				if (isset($v[1])) { $val=$q->validate->ast($v[1]); } else { $val=""; }
 				switch ($var) {
 					case "ObjectName":
 						$ms[$i]['phone']=$val; 

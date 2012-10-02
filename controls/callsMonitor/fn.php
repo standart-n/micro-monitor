@@ -1,5 +1,7 @@
 <?php class fn {
 
+var $local="";
+
 function loadModel($n) { $q=&$this->q; $m="";
     $mdl=$this->local.'models/'.$q->folder.'/mdl_'.$n.'.html';	
     if (file_exists($mdl)) { if (fopen($mdl,"r")) {

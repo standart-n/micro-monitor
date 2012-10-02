@@ -1,6 +1,11 @@
 <?php class main { 
 var $pl=array();
-function engine() { $s=""; $q->html="";
+function engine() { $s="";
+	include_once("class/class_q.php");
+	include_once("class/class_url.php");
+	$this->q=new q;
+	$q=&$this->q;
+	$q->url=new url;
 	foreach (array("plugins","base","display") as $key) { 
 		$this->$key($q); 
 	}
